@@ -15,7 +15,7 @@
             <div class="container">
             <h1>PRICE PREDICTION</h1>
             <form action="{{url_for('predict')}}" method="POST">
-                <input name="year" type="text" placeholder="Model Year"> 
+                <input name="year" type="text" placeholder="Model Year (YYYY)"> 
                 <br>
                 Manufacturer:
                 <br>
@@ -74,7 +74,7 @@
                 </select><br> 
                 Cylinders:<br><select name="cylinders">
                     <option value="0">3 cylinders</option>
-                    <option value="1">4 cylinders</option>
+                    <option value="1" selected>4 cylinders</option>
                     <option value="2">5 cylinders</option>
                     <option value="3">6 cylinders</option>
                     <option value="4">8 cylinders</option>
@@ -101,7 +101,7 @@
                 </select><br> 
                 Drive: <br><select name="drive">
                     <option value="1wd">1wd</option>
-                    <option value="2wd">2wd</option>
+                    <option value="2wd" selected>2wd</option>
                     <option value="3wd">3wd</option>
                     <option value="4wd">4wd</option>
                     <option value="5wd">5wd</option>
@@ -140,7 +140,7 @@
                 State: <br><select name="state">
                     <option value="midwest">MidWest</option>
                     <option value="south">South</option>
-                    <option value="northeast">NorthEast</option>
+                    <option value="northeast" selected>NorthEast</option>
                     <option value="west">West</option>
                 </select><br>
                 <button type="submit" class="submitBtn">PREDICT</button>

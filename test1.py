@@ -33,7 +33,7 @@ def predict():
         test["year"]=((test["year"]-1900)/(2020-1900))
         test["odometer"]=((test["odometer"]-0)/(10000000-0))
         test["cylinders"]=((test["cylinders"]-0)/(6-0))
-        regressor = pickle.load(open('E:/DPA_Project/Saved_Models/RandomFReg.pkl', 'rb'))
+        regressor = pickle.load(open('E:/DPA_Project/Saved_Models/BagReg.pkl', 'rb'))
         xx_columns=pickle.load(open('E:/DPA_Project/Saved_Models/xx_columns.pkl','rb'))
         testmodel=pd.get_dummies(test)
         missing_cols=set(xx_columns)-set(testmodel.columns)
@@ -42,7 +42,7 @@ def predict():
         testmodel=testmodel[xx_columns]
         result=regressor.predict(testmodel)
         result=np.expm1(result)
-        return render_template('index.html', prediction_text='The best price is $ {}'.format(result))
+        return render_template('index.html', prediction_text='The best price is $ {}'.format(result,2))
     	
 
 if __name__ == "__main__":
