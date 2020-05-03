@@ -15,6 +15,7 @@
             <div class="container">
             <h1>PRICE PREDICTION</h1>
             <form action="{{url_for('predict')}}" method="POST">
+                Model Year:<br>
                 <input name="year" type="text" placeholder="Model Year (YYYY)"> 
                 <br>
                 Manufacturer:
@@ -88,6 +89,7 @@
                     <option value="electric">Electric</option>
                     <option value="other">Other</option>
                 </select><br> 
+                Odometer: <br>
                 <input name="odometer" type="text" placeholder="Odometer"> <br> 
                 Title Status:<br><select name="title_status">
                     <option value="clean">Clean</option>
